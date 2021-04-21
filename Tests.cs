@@ -9,6 +9,10 @@ namespace TestProject
     {
         private IWebDriver driver;
 
+        private readonly By luckyButton = By.XPath("//div[@class='FPdoLc tfB0Bf']/descendant::*[@class='RNmpXc']");
+        private readonly By pageTitle = By.XPath("//title");
+        private string titleValue = "Google Doodles";
+
         [SetUp]
         public void Setup()
         {
@@ -20,8 +24,8 @@ namespace TestProject
         [Test]
         public void Test1()
         {
-            driver.FindElement(By.XPath("//div[@class='FPdoLc tfB0Bf']/descendant::*[@class='RNmpXc']")).Click();
-            driver.FindElement(By.XPath("//title")).Equals("Google Doodles");
+            driver.FindElement(luckyButton).Click();
+            driver.FindElement(pageTitle).Equals(titleValue);
             Thread.Sleep(3000);
         }
 
