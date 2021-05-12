@@ -5,11 +5,11 @@ using System.Threading;
 
 namespace TestProject
 {
-    public class Tests
+    public class GoogleTests
     {
         private IWebDriver driver;
 
-        private readonly By luckyButton = By.XPath("//div[@class='FPdoLc tfB0Bf']/descendant::*[@class='RNmpXc']");
+        private readonly By luckyButton = By.XPath("//div[@class='FPdoLc lJ9FBc']/descendant::*[@class='RNmpXc']");
         private readonly By pageTitle = By.XPath("//title");
         private string titleValue = "Google Doodles";
 
@@ -17,8 +17,9 @@ namespace TestProject
         public void Setup()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://www.google.com/");
             driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("https://www.google.com/");
+            //driver.Url = "https://www.google.com/";
         }
 
         [Test]
@@ -32,7 +33,8 @@ namespace TestProject
         [TearDown]
         public void TearDown()
         {
-            driver.Close();
+            driver.Quit();
+            //driver.Close();
         }
     }
 }
