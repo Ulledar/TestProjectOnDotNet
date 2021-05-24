@@ -16,7 +16,7 @@ namespace TestProject
         [SetUp]
         public void Setup()
         {
-            /* Режим инкогнито
+            /* incognito mode
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--incognito");
             driver = new ChromeDriver(chromeOptions);*/ 
