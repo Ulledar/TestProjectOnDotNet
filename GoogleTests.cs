@@ -16,10 +16,16 @@ namespace TestProject
         [SetUp]
         public void Setup()
         {
+            /* Режим инкогнито
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--incognito");
+            driver = new ChromeDriver(chromeOptions);*/ 
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.google.com/");
             //driver.Url = "https://www.google.com/";
+            driver.Manage().Cookies.DeleteAllCookies();
+
         }
 
         [Test]
